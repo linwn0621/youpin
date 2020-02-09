@@ -1,13 +1,53 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/auth/index",
+    "pages/cart/index",
+    "pages/category/index",
+    "pages/collect/index",
+    "pages/feedback/index",
+    "pages/goods_detail/index",
+    "pages/goods_list/index",
+    "pages/login/index",
+    "pages/order/index",
+    "pages/pay/index",
+    "pages/search/index",
+    "pages/user/index"
   ],
+  "tabBar": {
+    "list": [
+      {
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "styles/icons/home.png",
+      "selectedIconPath": "styles/icons/home-o.png"
+    },
+      {
+        "pagePath": "pages/category/index",
+        "text": "分类",
+        "iconPath": "styles/icons/category.png",
+        "selectedIconPath": "styles/icons/category-o.png"
+      },
+        {
+          "pagePath": "pages/cart/index",
+          "text": "购物车",
+          "iconPath": "styles/icons/cart.png",
+          "selectedIconPath": "styles/icons/cart-o.png"
+        },
+        {
+          "pagePath": "pages/user/index",
+          "text": "我的",
+          "iconPath": "styles/icons/my.png",
+          "selectedIconPath": "styles/icons/my-o.png"
+        }
+    ]
+    
+  },
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#EA4350",
+    "navigationBarTitleText": "优购商城",
+    "navigationBarTextStyle": "white"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
