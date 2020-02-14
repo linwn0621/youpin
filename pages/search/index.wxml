@@ -1,2 +1,9 @@
-<!--pages/search/index.wxml-->
-<text>pages/search/index.wxml</text>
+<view class="search">
+<view  class="search-left">
+<icon type="search"></icon>
+<input placeholder="输入商品名" bindinput="handleInputChange"></input>
+</view>
+<view class="search-btn" bindtap="handleClick">搜索</view>
+</view>
+ <!-- 列表 -->
+ <Searchlist searchlist="{{searchlist}}"/>

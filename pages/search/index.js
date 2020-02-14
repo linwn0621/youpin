@@ -1,3 +1,5 @@
+// 引入请求文件
+import { request } from "../../request/request.js"
 // pages/search/index.js
 Page({
 
@@ -5,6 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    inputVal: "",
+    searchlist: []
 
   },
 
@@ -13,6 +17,43 @@ Page({
    */
   onLoad: function (options) {
 
+  },
+  // 获取输入框的值
+  handleInputChange(e) {
+    this.setData({
+      inputVal: e.detail.value
+    })
+  },
+  // 点击搜索
+  async handleClick() {
+    // 如果没内容则提示
+    if (!this.data.inputVal) {
+      wx.showToast({
+        title: '商品名称不能为空',
+        icon: "none"
+      })
+      return false;
+    } else {
+      // 有数据则发请求
+      const searchlist = await request({
+        url: "/goods/search",
+        data: {
+          query: this.data.inputVal
+        }
+      })
+    
+      // 判断是否有数据没有数据提示
+      if (searchlist.goods.length === 0) {
+        wx.showToast({
+          title: '查无数据',
+          icon: "none"
+        })
+      }
+      this.setData({
+        searchlist: searchlist.goods
+      })
+      console.log(this.data.searchlist, 1)
+    }
   },
 
   /**
