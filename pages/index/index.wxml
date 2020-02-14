@@ -1,12 +1,38 @@
 <view class="">
-<!-- 首页搜索框 -->
-<Searchinput/>
-<!-- 首页轮播图 -->
-<swiper class="pyg_swiper" indicator-dots="{{true}}"
-  autoplay="{{true}}">
-<swiper-item></swiper-item>
-<swiper-item></swiper-item>
-</swiper>
-<!-- 首页分类 -->
-<!-- 首页楼层 -->
+  <!-- 首页搜索框 -->
+  <Searchinput/>
+  <!-- 首页轮播图 -->
+  <swiper class="pyg_swiper" indicator-dots="{{true}}" autoplay="{{true}}">
+    <swiper-item wx:for="{{swiper_list}}" wx:key="index">
+      <navigator url="{{item.navigator_url}}" open-type="{{item.open_type}}">
+        <image src="{{item.image_src}}" mode="widthFix"></image>
+      </navigator>
+    </swiper-item>
+  </swiper>
+  <!-- 首页分类 -->
+  <view class="pyg_catitems">
+    <block wx:for="{{catitems}}" wx:key="index">
+      <navigator url="{{item.navigator_url}}" open-type="{{item.open_type}}">
+        <image src="{{item.image_src}}" mode="widthFix"></image>
+      </navigator>
+    </block>
+  </view>
+  <!-- 首页楼层 -->
+  <view class="pyg_floorData">
+    <block wx:for="{{floorData}}" wx:key="index">
+    <!-- 标题 -->
+      <view class="floor_title">
+        <image src="{{item.floor_title.image_src}}"></image>
+      </view>
+      <!-- 内容 -->
+      <view class="floor_data">
+      <block wx:for="{{item.product_list}}"wx:for-item="v" wx:for-index="i" wx:key="i">
+      <navigator url="{{v.navigator_url}}" open-type="{{v.open_type}}">
+       <image src="{{v.image_src}}" mode="{{i==0?'widthFix':'scaleToFill'}}"></image>
+      </navigator>
+      </block>
+      </view>
+    </block>
+  </view>
+
 </view>
