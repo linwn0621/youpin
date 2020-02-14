@@ -1,0 +1,39 @@
+.search_list {
+    margin: 15rpx 26rpx;
+    navigator {
+        width: 698rpx;
+        height: 209rpx;
+        overflow: hidden;
+        border-bottom: 1rpx solid #ccc;
+        .search_left {
+            float: left;
+            margin-right: 29rpx;
+
+            image {
+                width: 190rpx;
+                height: 190rpx;
+            }
+        }
+
+        .search_right {
+            height: 209rpx;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .search_title {
+                margin-top: 26rpx;
+                font-size: 24rpx;
+                display: -webkit-box;
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+            }
+            .search_price {
+                color: var(--themeColor);
+                font-size: 24rpx;
+                margin-bottom:27rpx ;
+            }
+        }
+    }
+
+}

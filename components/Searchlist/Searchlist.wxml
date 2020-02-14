@@ -1,0 +1,24 @@
+<view class="search_list">
+
+  <block wx:for="{{searchlist}}" wx:key="index">
+    <navigator>
+    <view class="search_left">
+    <image src="{{item.goods_small_logo?item.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}" mode="widthFix">
+      </image>
+    </view>
+      
+      <view class="search_right">
+      <!-- 商品名 -->
+        <view class="search_title">
+        {{item.goods_name}}
+        </view>
+        <!-- 商品价格 -->
+        <view class="search_price">
+          ¥{{item.goods_price?item.goods_price:'售完'}}
+        </view>
+      </view>
+
+    </navigator>
+  </block>
+
+</view>
