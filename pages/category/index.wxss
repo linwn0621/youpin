@@ -1,1 +1,51 @@
 /* pages/category/index.wxss */
+.pyg_category .category_list {
+  overflow: hidden;
+  height: calc(100vh - 100rpx);
+}
+.pyg_category .category_list .category_left {
+  height: 100%;
+  width: 182rpx;
+  background-color: #f3f3f3;
+  float: left;
+}
+.pyg_category .category_list .category_left .category_left_item {
+  font-size: 28rpx;
+  line-height: 40rpx;
+  margin-bottom: 37rpx;
+  text-align: center;
+}
+.pyg_category .category_list .category_left .category_left_item:nth-child(1) {
+  margin-top: 17rpx;
+}
+.pyg_category .category_list .category_left .active {
+  color: var(--themeColor);
+  border-left: solid 1rpx #ea4350;
+}
+.pyg_category .category_list .category_right {
+  float: right;
+  height: 100%;
+  width: calc(100vw - 182rpx);
+}
+.pyg_category .category_list .category_right .categories_right_content {
+  overflow: hidden;
+}
+.pyg_category .category_list .category_right .categories_right_content .category_right_title {
+  padding-top: 18rpx;
+  font-size: 26rpx;
+  text-align: center;
+  margin-bottom: 21rpx;
+  color: #636363;
+}
+.pyg_category .category_list .category_right .categories_right_content .category_right_item {
+  width: 33.33%;
+  float: left;
+  text-align: center;
+}
+.pyg_category .category_list .category_right .categories_right_content .category_right_item .category_right_item_img image {
+  width: 120rpx;
+}
+.pyg_category .category_list .category_right .categories_right_content .category_right_item .cat_name {
+  font-size: 21rpx;
+  line-height: 29rpx;
+}
