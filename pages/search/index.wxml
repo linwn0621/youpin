@@ -1,3 +1,4 @@
+<!-- 搜索中心页 -->
 <view class="search">
 <view  class="search-left">
 <icon type="search"></icon>
