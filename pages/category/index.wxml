@@ -1,27 +1,26 @@
+<!-- 商品分类页 -->
 <view class="pyg_category">
   <Searchinput/>
   <view class="category_list">
-    <scroll-view scroll-y class="category_left" >
+    <scroll-view scroll-y class="category_left">
       <view wx:for="{{categories}}" wx:key="index" class="category_left_item {{index===selectIndex? 'active':''}}" bindtap="handleCategoryClick" data-index="{{index}}">
         {{item.cat_name}}
       </view>
     </scroll-view>
-
-
-    <scroll-view scroll-y class="category_right"  scroll-top="{{scroll_top}}">
+    <scroll-view scroll-y class="category_right" scroll-top="{{scroll_top}}">
       <view wx:for="{{rightContent}}" wx:key="index" class="categories_right_content">
         <!-- 标题 -->
         <view class="category_right_title">/ {{item.cat_name}} /</view>
         <!-- 商品 -->
         <navigator class="category_right_item" wx:for="{{item.children}}" wx:for-item="v" wx:for-index="i" wx:key="i" url="/pages/goods_list/index?cid={{v.cat_id}}">
           <view class="category_right_item_img">
-            <image src="{{v.cat_icon}}"mode="widthFix" ></image>
+            <image src="{{v.cat_icon}}" mode="widthFix"></image>
           </view>
           <view class="cat_name">{{v.cat_name}}</view>
         </navigator>
 
       </view>
     </scroll-view>
-   
+
   </view>
 </view>
