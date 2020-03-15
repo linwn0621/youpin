@@ -9,7 +9,7 @@ Page({
   data: {
     swiper_list: [],
     catitems: [],
-floorData:[]
+    floorData: []
   },
 
   /**
@@ -38,12 +38,12 @@ floorData:[]
     this.setData({
       catitems
     })
-    // console.log(catitems)
+    
   },
   // 获取楼层数据
-  async getfloorData(){
-    const floorData= await request({
-      url:"/home/floordata"
+  async getfloorData() {
+    const floorData = await request({
+      url: "/home/floordata"
     })
     this.setData({
       floorData
