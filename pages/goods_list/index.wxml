@@ -1,2 +1,14 @@
-<!--pages/goods_list/index.wxml-->
-<text>pages/goods_list/index.wxml</text>
+<!-- 商品列表页面 -->
+<view class="pyg_goods_list">
+<!-- 搜索框 -->
+<Searchinput/>
+<!-- tab组件 -->
+<Tabs tabs="{{tabs}}" bind:tabsChange="handleTabsChange" />
+
+<view wx:if="{{tabs[0].isActive}}">
+<!-- 商品列表 -->
+<Searchlist searchlist="{{goods}}" />
+</view>
+<view wx:if="{{tabs[1].isActive}}">销量</view>
+<view wx:if="{{tabs[2].isActive}}">价格</view>
+</view>
