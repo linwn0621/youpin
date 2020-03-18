@@ -1,3 +1,19 @@
+// 收藏功能 
+// 1. 点击收藏图标的时候 
+//   a. 从本地缓存中查看一下是否已经收藏
+//    a.1 如果已经收藏 取消收藏 图标就恢复未选中状态 
+//    a.2 如果没有收藏 那么就标记收藏 图标就显示选中状态
+// 2. 如果你是重新进入到这个页面的，那么此时你就要判断一下，商品是否已经
+// 收藏在本地，如果已经收藏，图片显示选中状态；如果未收藏，未选中状态。
+
+// 底部工具栏的实现
+// 1. 点击 联系客服 =》 调用系统的客服功能 =》 button open-type=contact
+// 2. 点击 购物车 => 跳转到购物车 页面 /pages/cart/index
+// 3. 点击 加入购物车   备注：购物车是使用本地缓存来存储购物车数据
+//    a. 如果该商品已经点击 加入购物车 一次 此时 应该是 购物车里面该商品数量 加一
+//    b. 如果该商品没有被加入过 添加到本地缓存中 同时设置购物车中 该商品数量为1
+// 4. 点击 立即购买 => 跳转到支付页面 /pages/pay/index
+
 import { request } from "../../request/request.js"
 // pages/goods_detail/index.js
 Page({
@@ -78,6 +94,25 @@ Page({
       wx.setStorageSync("collect", collect)
     }
 
+  },
+  // 点击加入购物车
+  handlecar(e){
+    const cars = wx.getStorageSync("cars")||[];
+    const index = cars.findIndex(v => v.goods_id === this.data.Goodsdetail.goods_id)
+    if (index===-1){
+      this.data.Goodsdetail.num=1
+      this.data.Goodsdetail.checked=true
+      cars.push(this.data.Goodsdetail)
+    }else{
+      cars[index].num++
+    }
+    wx.setStorageSync("cars", cars);
+    wx.showToast({
+      title: '加入购物车成功',
+      icon: "success",
+      mask: true
+    })
+    console.log(e)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
