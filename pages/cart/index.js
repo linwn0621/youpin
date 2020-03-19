@@ -43,7 +43,6 @@ Page({
     let totalnum=0
     let totalmoney=0
     let isallcheck=true
- 
     cars.forEach(v=>{
       if (v.checked){
         totalnum+=v.num
@@ -75,6 +74,23 @@ Page({
     this.setData({
       isallcheck
     })
+  },
+  // 点击增加
+  handleAdd(e){
+    const index = e.target.dataset.index
+    let { cars } = this.data
+    cars[index].num++
+    this.gettotalmoney(cars)
+  },
+  // 点击减少
+  handleDown(e){
+    const index = e.target.dataset.index
+    let { cars } = this.data
+    cars[index].num--
+    if (cars[index].num===0){
+      cars.splice(index,1)
+    }
+    this.gettotalmoney(cars)
   },
   /**
    * 生命周期函数--监听页面隐藏

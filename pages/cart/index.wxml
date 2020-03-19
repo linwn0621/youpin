@@ -14,9 +14,9 @@
           <view class="cart_total">
             <view class="cart_price">￥{{item.goods_price}}</view>
             <view class="cart_number">
-              <view class="iconfont icon-jianshao"></view>
+              <view class="iconfont icon-jianshao" bindtap="handleDown" data-index="{{index}}"></view>
               <view class="cart_num">{{item.num}}</view>
-              <view class="iconfont icon-zengjia"></view>
+              <view class="iconfont icon-zengjia" bindtap="handleAdd" data-index="{{index}}"></view>
             </view>
           </view>
         </view>
