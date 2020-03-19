@@ -1,2 +1,52 @@
-<!--pages/cart/index.wxml-->
-<text>pages/cart/index.wxml</text>
+<!-- 购物车 -->
+<view class="cart">
+  <!-- 购物车存在开始 -->
+  <view class="cart_exist" wx:if="{{cars.length}}">
+    <!-- 购物车商品开始 -->
+    <view class="cart_item" wx:for="{{cars}}" wx:key="index">
+      <view class=" iconfont {{item.checked ?'icon-xuanzhong1':'icon-kexuan'}}" bindtap="handleCheck" data-index="{{index}}"></view>
+      <view class="cart_item_list">
+        <view class="cart_img">
+          <image src="{{item.goods_small_logo ? item.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}" mode="widthFix"></image>
+        </view>
+        <view class="cart_content">
+          <view class="cart_title">{{item.goods_name}}</view>
+          <view class="cart_total">
+            <view class="cart_price">￥{{item.goods_price}}</view>
+            <view class="cart_number">
+              <view class="iconfont icon-jianshao"></view>
+              <view class="cart_num">{{item.num}}</view>
+              <view class="iconfont icon-zengjia"></view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+    <!-- 购物车商品结束 -->
+    <!-- 购物车底部工具栏开始 -->
+    <view class="cart_tool">
+      <view class="cart_tool_left">
+        <view class=" iconfont {{isallcheck?'icon-xuanzhong1':'icon-kexuan'}}" bindtap="handleCheckall"></view>
+        <view class="text1" >全选</view>
+      </view>
+      <view class="cart_tool_right">
+        <view class="text2">合计 :</view>
+        <view class="totalprice">￥{{totalmoney}}</view>
+        <view class="pay">去结算({{totalnum}})</view>
+      </view>
+    </view>
+    <!-- 购物车底部工具栏开始 -->
+  </view>
+  <!-- 购物车存在结束 -->
+  <!-- 购物车空开始 -->
+  <view class="cart_empty" wx:else>
+    <image src="http://hbimg.b0.upaiyun.com/e1b1467beea0a9c7d6a56b32bac6d7e5dcd914f7c3e6-YTwUd6_fw658" mode="widthFix"></image>
+    <view class="empty_text">购物车居然是空的</view>
+    <view class="empty_info">再忙，也记得买点什么犒赏自己~</view>
+    <navigator url="/pages/category/index" open-type="switchTab">
+      <view class="go_shopping">去逛逛</view>
+    </navigator>
+  </view>
+  <!-- 购物车空结束 -->
+</view>

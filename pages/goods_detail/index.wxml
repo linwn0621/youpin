@@ -19,7 +19,7 @@
                     <view class="fenxiang_icon iconfont icon-fenxiang"></view>
                     <button open-type="share"></button>
                 </view>
-                <view class="shoucang iconfont  {{isCollect?'icon-shoucang_gaoliang active ':'icon-shoucang'}} " bindtap="handleshoucang"></view>
+                <view class="shoucang iconfont  {{isCollect?'icon-shoucang active ':'icon-shoucang1'}} " bindtap="handleshoucang"></view>
             </view>
         </view>
         <!-- 价格结束 -->
