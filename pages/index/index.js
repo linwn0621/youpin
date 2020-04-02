@@ -9,7 +9,8 @@ Page({
   data: {
     swiper_list: [],
     catitems: [],
-    floorData: []
+    floorData: [],
+    str:""
   },
 
   /**
@@ -25,6 +26,7 @@ Page({
     const swiper_list = await request({
       url: "/home/swiperdata"
     })
+    console.log("轮播图",swiper_list)
     this.setData({
       swiper_list
     })
@@ -42,13 +44,22 @@ Page({
   },
   // 获取楼层数据
   async getfloorData() {
-    const floorData = await request({
+    let floorData = await request({
       url: "/home/floordata"
     })
+   floorData.map(
+      v=>{
+        // console.log(v)
+        v.product_list.map(v1=>{
+          v1.navigator_url=v1.navigator_url.slice(0,17)+"/index"+v1.navigator_url.slice(17)
+        })
+      }
+    )
+
     this.setData({
       floorData
     })
-    console.log(floorData)
+    // console.log(floorData)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

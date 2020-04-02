@@ -4,7 +4,7 @@
   <!-- 首页轮播图 -->
   <swiper class="pyg_swiper" indicator-dots="{{true}}" autoplay="{{true}}">
     <swiper-item wx:for="{{swiper_list}}" wx:key="index">
-      <navigator url="{{item.navigator_url}}" open-type="{{item.open_type}}">
+      <navigator url="/pages/goods_detail/index?goods_id={{item.goods_id}}" open-type="{{item.open_type}}">
         <image src="{{item.image_src}}" mode="widthFix"></image>
       </navigator>
     </swiper-item>
@@ -12,7 +12,7 @@
   <!-- 首页分类 -->
   <view class="pyg_catitems">
     <block wx:for="{{catitems}}" wx:key="index">
-      <navigator url="{{item.navigator_url}}" open-type="{{item.open_type}}">
+      <navigator url="/pages/category/index" open-type="{{item.open_type}}">
         <image src="{{item.image_src}}" mode="widthFix"></image>
       </navigator>
     </block>
