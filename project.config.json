@@ -110,6 +110,21 @@
 					"id": -1,
 					"name": "订单页面",
 					"pathName": "pages/order/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/user/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "意见反馈页面",
+					"pathName": "pages/feedback/index",
+					"query": "",
 					"scene": null
 				}
 			]

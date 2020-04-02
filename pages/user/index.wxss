@@ -1,1 +1,112 @@
 /* pages/user/index.wxss */
+.yp_user {
+  /* 系统功能区 */
+}
+.yp_user .user .user1 {
+  width: 100vw;
+  height: 330rpx;
+  position: relative;
+}
+.yp_user .user .user1 .user1_background image {
+  height: 330rpx;
+  filter: blur(10px);
+}
+.yp_user .user .user1 .user1_head {
+  position: absolute;
+  top: 32rpx;
+  left: 289rpx;
+  text-align: center;
+}
+.yp_user .user .user1 .user1_head .img image {
+  border-radius: 50%;
+  width: 172rpx;
+  height: 172rpx;
+}
+.yp_user .user .user1 .user1_head .text {
+  font-size: 32rpx;
+  color: #FFFFFF;
+}
+.yp_user .user .user2 {
+  margin-top: 100rpx;
+}
+.yp_user .order_func {
+  height: 144rpx;
+  margin: 20rpx 12rpx;
+  width: calc(100vw - 24rpx);
+  display: flex;
+  align-items: center;
+  background-color: white;
+  color: #434343;
+}
+.yp_user .order_func .order_to_pay {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.yp_user .order_func .order_to_pay .iconfont.icon-daifukuan {
+  font-size: 55rpx;
+}
+.yp_user .order_func .order_to_pay .text {
+  font-size: 26rpx;
+}
+.yp_user .order_func .order_to_recieve {
+  flex: 1;
+  text-align: center;
+}
+.yp_user .order_func .order_to_recieve .iconfont.icon-daishouhuo {
+  font-size: 55rpx;
+}
+.yp_user .order_func .order_to_recieve .text {
+  font-size: 26rpx;
+}
+.yp_user .order_func .order_to_drawback {
+  flex: 1;
+  text-align: center;
+}
+.yp_user .order_func .order_to_drawback .iconfont.icon-tuikuan {
+  font-size: 55rpx;
+}
+.yp_user .order_func .order_to_drawback .text {
+  font-size: 26rpx;
+}
+.yp_user .order_func .order_all {
+  flex: 1;
+  text-align: center;
+}
+.yp_user .order_func .order_all .iconfont.icon-quanbudingdan {
+  font-size: 55rpx;
+}
+.yp_user .order_func .order_all .text {
+  font-size: 26rpx;
+}
+.yp_user .system_func {
+  height: 520rpx;
+  margin: 0 12rpx;
+  width: calc(100vw - 24rpx);
+  background-color: white;
+}
+.yp_user .system_func .func_list_item {
+  height: 101rpx;
+  width: 726rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1rpx solid #c8c8c8;
+  color: #434343;
+}
+.yp_user .system_func .func_list_item .left {
+  display: flex;
+  align-items: center;
+}
+.yp_user .system_func .func_list_item .left .iconfont {
+  margin: 0 28rpx 0 40rpx;
+  font-size: 45rpx;
+}
+.yp_user .system_func .func_list_item .left text.text {
+  font-size: 26rpx ;
+}
+.yp_user .system_func .func_list_item .right {
+  font-size: 26rpx;
+  margin-right: 46rpx;
+}

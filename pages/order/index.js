@@ -25,14 +25,21 @@ Page({
       isActive: false,
       type: 3, //订单类型
     }],
-    type: 1
+   
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const type = 1
+    console.log(options, 1)
+    const type = options.type || 1
+    const {tabs} = this.data
+   tabs.forEach(v => v.type == type ? v.isActive = true : v.isActive = false)
+    console.log(tabs,2)
+    this.setData({
+      tabs
+    })
     this.getorders(type)
   },
   // 获取订单数据
@@ -54,7 +61,7 @@ Page({
   },
   // 点击切换
   handletabsChange(e) {
-    console.log(e.detail)
+    console.log(e.detail, 2)
     let tabs = e.detail;
     tabs.map(async v => {
       if (v.isActive) {

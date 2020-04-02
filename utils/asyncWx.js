@@ -110,5 +110,17 @@ export const showToast = (params) => {
     })
   })
 }
-
-
+// 获取用户信息
+export const getUserInfo = (params) => {
+  return new Promise(function (resolve, reject) {
+    wx.getUserInfo({
+    
+      success: (res) => {
+        resolve(res);
+      },
+      fail: (err) => {
+        reject(err);
+      }
+    })
+  })
+}
