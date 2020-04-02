@@ -9,6 +9,7 @@
   display: flex;
   align-items: center;
   padding: 0 25rpx;
+  margin-bottom: 83rpx;
 }
 .cart .cart_exist .cart_item .iconfont.icon-xuanzhong1 {
   font-size: 36rpx;
@@ -69,8 +70,9 @@
 }
 .cart .cart_exist .cart_tool {
   border-top: 1rpx solid #f5f5f5;
-  position: absolute;
+  position: fixed;
   bottom: 0;
+  background-color: white;
   width: 100vw;
   height: 83rpx;
   display: flex;
@@ -114,6 +116,16 @@
   width: 150rpx;
   line-height: 52rpx;
   background-color: #ea4350;
+  font-size: 20rpx;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 26rpx;
+}
+.cart .cart_exist .cart_tool .cart_tool_right .pay2 {
+  margin-left: 10rpx;
+  width: 150rpx;
+  line-height: 52rpx;
+  background-color: gray;
   font-size: 20rpx;
   color: #ffffff;
   text-align: center;

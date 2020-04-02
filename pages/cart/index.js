@@ -1,4 +1,5 @@
-import { request } from "../../request/request.js"
+
+import { showModal } from "../../utils/asyncWx.js"
 // pages/cart/index.js
 Page({
 
@@ -83,15 +84,25 @@ Page({
     this.gettotalmoney(cars)
   },
   // 点击减少
-  handleDown(e){
+  async handleDown(e){
     const index = e.target.dataset.index
     let { cars } = this.data
     cars[index].num--
     if (cars[index].num===0){
-      cars.splice(index,1)
+     
+      const res = await showModal({
+  content: "您确定要删除商品？"
+      })
+      if (res.confirm){
+        cars.splice(index, 1)
+      }else{
+        cars[index].num=1
+      }
+      console.log(res)
     }
     this.gettotalmoney(cars)
   },
+
   /**
    * 生命周期函数--监听页面隐藏
    */

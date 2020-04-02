@@ -5,11 +5,15 @@
     <!-- 购物车商品开始 -->
     <view class="cart_item" wx:for="{{cars}}" wx:key="index">
       <view class=" iconfont {{item.checked ?'icon-xuanzhong1':'icon-kexuan'}}" bindtap="handleCheck" data-index="{{index}}"></view>
+
       <view class="cart_item_list">
-        <view class="cart_img">
-          <image src="{{item.goods_small_logo ? item.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}" mode="widthFix"></image>
-        </view>
+        <navigator url="/pages/goods_detail/index?goods_id={{item.goods_id}}" role="navigation">
+          <view class="cart_img">
+            <image src="{{item.goods_small_logo ? item.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}" mode="widthFix"></image>
+          </view>
+        </navigator>
         <view class="cart_content">
+        
           <view class="cart_title">{{item.goods_name}}</view>
           <view class="cart_total">
             <view class="cart_price">￥{{item.goods_price}}</view>
@@ -21,19 +25,23 @@
           </view>
         </view>
       </view>
-
     </view>
     <!-- 购物车商品结束 -->
     <!-- 购物车底部工具栏开始 -->
     <view class="cart_tool">
       <view class="cart_tool_left">
         <view class=" iconfont {{isallcheck?'icon-xuanzhong1':'icon-kexuan'}}" bindtap="handleCheckall"></view>
-        <view class="text1" >全选</view>
+        <view class="text1">全选</view>
       </view>
       <view class="cart_tool_right">
         <view class="text2">合计 :</view>
         <view class="totalprice">￥{{totalmoney}}</view>
-        <view class="pay">去结算({{totalnum}})</view>
+        <view wx:if="{{totalnum!=0}}">
+          <navigator url="/pages/pay/index">
+            <view class="pay">去结算({{totalnum}})</view>
+          </navigator>
+        </view>
+        <view class="pay2" wx:else>去结算({{totalnum}})</view>
       </view>
     </view>
     <!-- 购物车底部工具栏开始 -->
