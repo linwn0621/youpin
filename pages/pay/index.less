@@ -1,0 +1,166 @@
+/* pages/pay/index.wxss */
+
+.pay {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f9f9f9;
+  //   background-color: blue;
+  position: relative;
+  padding-top: 20rpx;
+  //   地址
+  .pay_address {
+    background-color: #fff;
+    border-radius: 20rpx;
+    margin: 0 20rpx 35rpx 20rpx;
+    height: 187rpx;
+    .details_address {
+      height: 187rpx;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .iconfont.icon-dingwei{
+     margin: 0 25rpx;
+color: gray;
+font-size: 30rpx;
+      }
+      .content{
+      
+        .details {
+            // padding: 20rpx 29rpx 20rpx 29rpx;
+            font-size: 30rpx;
+            color: black;
+            display: flex;
+            justify-content: space-between;
+            .details_name {
+              //   margin-right: 23rpx;
+            }
+    
+            .details_tel {
+            }
+          }
+        .address {
+            margin-top: 15rpx;
+            font-size: 26rpx;
+            color: gray;
+            // margin: 0rpx 17rpx 18rpx 29rpx;
+          }
+
+      }
+    .iconfont.icon-youjiantou{
+        margin: 0 25rpx;
+        color: gray;
+    }
+    }
+
+    .pay_location {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .choose_address {
+        width: 303rpx;
+        height: 89rpx;
+        border-radius: 45rpx;
+        border: 2rpx solid #ea4350;
+        color: #ea4350;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+  // 商品
+  .pay_goods {
+    background-color: #fff;
+    border-radius: 20rpx;
+    margin: 0 20rpx;
+    .pay_goods_title {
+      font-size: 26rpx;
+      color: #434343;
+      padding: 17rpx 0 17rpx 26rpx;
+      font-weight: 600;
+    }
+
+    .pay_goods_item {
+      display: flex;
+      height: 209rpx;
+      .item_image {
+        margin: 9rpx 29rpx 9rpx 15rpx;
+        image {
+          width: 191rpx;
+          height: 191rpx;
+        }
+      }
+
+      .item_content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 26rpx 0;
+        .text {
+          font-size: 23rpx;
+          color: #434343;
+          margin-right: 13rpx;
+          display: -webkit-box;
+          overflow: hidden;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+        }
+
+        .priceAndNum {
+          display: flex;
+          justify-content: space-between;
+          margin-right: 26rpx;
+          .price {
+            font-size: 24rpx;
+            color: var(--themeColor);
+          }
+
+          .num {
+            font-size: 28rpx;
+            color: #434343;
+            margin-right: 13rpx;
+          }
+        }
+      }
+    }
+  }
+  //   底部工具栏
+  .pay_floor {
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 83rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .floor_left {
+      display: flex;
+      margin-left: 28rpx;
+      color: #8a8a8a;
+      .text2 {
+        width: 78rpx;
+        margin-left: 36rpx;
+        font-size: 26rpx;
+        color: #292929;
+      }
+
+      .totalprice {
+        color: var(--themeColor);
+        font-size: 26rpx;
+      }
+    }
+
+    .floor_right {
+      margin-right: 28rpx;
+      line-height: 52rpx;
+      text-align: center;
+      width: 150rpx;
+      background-color: var(--themeColor);
+      color: white;
+      font-size: 21rpx;
+      border-radius: 26rpx;
+    }
+  }
+}

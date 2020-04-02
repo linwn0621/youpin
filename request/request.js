@@ -6,13 +6,23 @@ export const request = (params) => {
     title: '正在加载中',
     mask: true
   })
+  // 取出请求头
+  // let {header} = params
+ 
+  let header = { ...params.header };
+  console.log(123, header)
+  if (params.url.includes("/my/")) {
+    header["Authorization"] = wx.getStorageSync("token");
+  }
   // 配合promise
   return new Promise(function (resolve, reject) {
     wx.request({
       ...params,
+      header: header,
       url: BASE_URL + params.url,
       success: (res) => {
         resolve(res.data.message)
+        // console.log(123123,res)
       },
       fail: (err) => {
         reject(err);

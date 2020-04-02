@@ -1,2 +1,52 @@
-<!--pages/pay/index.wxml-->
-<text>pages/pay/index.wxml</text>
+<!-- 支付页面 -->
+<view class="pay">
+  <!-- 地址开始 -->
+  <view class="pay_address">
+    <block wx:if="{{address.all}}">
+      <view class="details_address">
+        <view class="iconfont icon-dingwei"></view>
+
+        <view class="content" bindtap="handleChange">
+          <view class="details">
+            <view class="details_name">收货人:{{address.userName}}</view>
+            <view class="details_tel">{{address.telNumber}}</view>
+          </view>
+          <view class="address">收货地址:{{address.all}}</view>
+        </view>
+        <view class="iconfont icon-youjiantou" bindtap="handleChange"></view>
+
+
+      </view>
+    </block>
+    <view class="pay_location" wx:else>
+      <view class="choose_address" bindtap="handleAddressChoose">选择地址</view>
+    </view>
+  </view>
+  <!-- 地址结束 -->
+  <!-- 商品开始 -->
+  <view class="pay_goods">
+    <view class="pay_goods_title">已选商品</view>
+    <view class="pay_goods_item" wx:for="{{cars}}" wx:key="index" wx:if="{{item.checked}}">
+      <view class="item_image">
+        <image src="{{item.goods_small_logo?item.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}"></image>
+      </view>
+      <view class="item_content">
+        <text class="text">{{item.goods_name}}</text>
+        <view class="priceAndNum">
+          <view class="price">￥{{item.goods_price}}</view>
+          <view class="num">x{{item.num}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 商品结束 -->
+  <!-- 底部栏开始 -->
+  <view class="pay_floor">
+    <view class="floor_left">
+      <view class="text2">合计:</view>
+      <view class="totalprice">￥{{totalmoney}}</view>
+    </view>
+    <view class="floor_right" bindtap="handlePay">去支付({{totalnum}})</view>
+  </view>
+  <!-- 底部栏结束 -->
+</view>
