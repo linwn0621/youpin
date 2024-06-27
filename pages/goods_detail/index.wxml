@@ -45,10 +45,8 @@
                 </navigator>
             </view>
             <view class="btncar" bindtap="handlecar">加入购物车</view>
-            <view class="btnbuy">
-            <navigator  url="/pages/pay/index" open-type="switchTab">
+            <view class="btnbuy" bindtap="handleBuy">
                立即购买
-            </navigator>
             </view>
         </view>
     </view>

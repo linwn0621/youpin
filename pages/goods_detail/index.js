@@ -47,6 +47,7 @@ Page({
     this.setData({
       Goodsdetail, isCollect
     })
+
     console.log(Goodsdetail)
   },
   // 点击图片放大
@@ -96,14 +97,14 @@ Page({
 
   },
   // 点击加入购物车
-  handlecar(e){
-    const cars = wx.getStorageSync("cars")||[];
+  handlecar(e) {
+    const cars = wx.getStorageSync("cars") || [];
     const index = cars.findIndex(v => v.goods_id === this.data.Goodsdetail.goods_id)
-    if (index===-1){
-      this.data.Goodsdetail.num=1
-      this.data.Goodsdetail.checked=true
+    if (index === -1) {
+      this.data.Goodsdetail.num = 1
+      this.data.Goodsdetail.checked = true
       cars.push(this.data.Goodsdetail)
-    }else{
+    } else {
       cars[index].num++
     }
     wx.setStorageSync("cars", cars);
@@ -112,7 +113,16 @@ Page({
       icon: "success",
       mask: true
     })
-    console.log(e)
+    // console.log(e)
+  },
+  //立即购买
+  handleBuy: function () {
+    this.handlecar({
+      pay: true
+    });
+    wx.navigateTo({
+      url: '/pages/pay/index',
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

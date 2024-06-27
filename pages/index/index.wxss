@@ -34,9 +34,9 @@
   float: left;
   width: 33.33%;
 }
-.pyg_floorData .floor_data navigator:nth-last-child(-n+4) {
-height: 199.63437499999998rpx;
- border-left: 10rpx solid #fff;
+.pyg_floorData .floor_data navigator:nth-child(-n+4) {
+  height: 188rpx;
+  border-left: 10rpx;
 }
 .pyg_floorData .floor_data navigator:nth-child(2),
 .pyg_floorData .floor_data navigator:nth-child(3) {

@@ -48,6 +48,7 @@ Page({
       if (v.checked){
         totalnum+=v.num
         totalmoney += v.num * v.goods_price
+        
       }else{
         isallcheck=false
       }

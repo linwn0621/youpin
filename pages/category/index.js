@@ -27,7 +27,7 @@ Page({
   
     const index = e.currentTarget.dataset.index
     const scroll_top = 0;
-    // console.log(rightContent)
+    console.log(this.data.categories[index].children)
     this.setData({
       rightContent: this.data.categories[index].children,
       selectIndex: index,

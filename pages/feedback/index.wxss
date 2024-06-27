@@ -1,1 +1,90 @@
-/* pages/feedback/index.wxss */
+.pyg_feedback {
+  height: 100vh;
+  background-color: #f9f9f9;
+  padding: 20rpx 19rpx 0 20rpx;
+}
+.pyg_feedback .question_types {
+  height: 203rpx;
+  width: 711rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+.pyg_feedback .question_types .question_title {
+  padding-top: 5rpx;
+  font-size: 26rpx;
+  color: #434343;
+  margin-left: 29rpx;
+}
+.pyg_feedback .question_types .types_list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.pyg_feedback .question_types .types_list .types_list_item {
+  color: #545353;
+  margin: 20rpx 20rpx 10rpx 29rpx;
+  width: 181rpx;
+  height: 46rpx;
+  line-height: 46rpx;
+  border-radius: 23rpx;
+  background-color: #EDEDED;
+  font-size: 20rpx;
+  text-align: center;
+}
+.pyg_feedback .question_types .types_list .active {
+  background-color: #ffe6e6;
+  border: 1rpx solid currentColor;
+  color: #ea4350;
+}
+.pyg_feedback .question_desc {
+  width: 100%;
+  margin: 20rpx 0;
+  background-color: white;
+}
+.pyg_feedback .pics_list {
+  background-color: white;
+  min-height: 216rpx;
+  width: 711rpx;
+}
+.pyg_feedback .pics_list .pics_list_title {
+  color: #434343;
+  padding: 20rpx;
+}
+.pyg_feedback .pics_list .pics_list_add {
+  float: left;
+  display: inline-block;
+  margin: 0 7rpx;
+  height: 128rpx;
+  width: 128rpx;
+  color: #ccc;
+  background-color: #d8d8d8;
+  font-size: 80rpx;
+  text-align: center;
+  line-height: 128rpx;
+}
+.pyg_feedback .pics_list .pics_list_item {
+  display: inline-block;
+  height: 128rpx;
+  width: 128rpx;
+  margin: 0 7rpx;
+  position: relative;
+}
+.pyg_feedback .pics_list .pics_list_item image {
+  height: 100%;
+  width: 100%;
+}
+.pyg_feedback .pics_list .pics_list_item icon {
+  position: absolute;
+  top: 0;
+  left: 100rpx;
+}
+.pyg_feedback .feedback_submit {
+  width: 711rpx;
+  height: 70rpx;
+  background-color: #ea4350;
+  border-radius: 34rpx;
+  text-align: center;
+  line-height: 70rpx;
+  color: white;
+  margin-top: 20rpx;
+}
